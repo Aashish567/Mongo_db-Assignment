@@ -1,0 +1,28 @@
+Task 5: Aggregation
+Write an aggregation query to find the average age of all students in the collection.
+
+Solution:  
+
+Insert the following student records into the "students" collection:
+● Name: Alice, Age: 22, Gender: Female, Grade: A
+● Name: Bob, Age: 25, Gender: Male, Grade: B
+● Name: Charlie, Age: 20, Gender: Male, Grade: A-
+● Name: Diana, Age: 23, Gender: Female, Grade: B+
+● Name: Ethan, Age: 21, Gender: Male, Grade: B
+
+According to the above data, the aggregation query is given below:
+
+*Query: db.students.aggregate([
+  {
+    $group: {
+      _id: null,
+      averageAge: { $avg: "$Age" }
+    }
+  }
+])
+
+*Output: 
+{
+  _id: null,
+  averageAge: 22.2
+}
