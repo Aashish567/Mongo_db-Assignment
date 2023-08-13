@@ -1,0 +1,132 @@
+Task 2: Find Documents
+Write queries to find the following information:
+● Find all students in the collection.
+● Find students who are older than 21.
+● Find female students with grade "A" or "A-".
+● Find male students with grade "B" or "B+".
+● Find students named "Alice" or "Charlie".
+
+Solution:
+1.) Find all students in the collection:
+
+*Query: db.students.find({})
+
+*Output:
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffcd"),
+  Name: 'Alice',
+  Age: 22,
+  Gender: 'Female',
+  Grade: 'A'
+}
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffce"),
+  Name: 'Bob',
+  Age: 25,
+  Gender: 'Male',
+  Grade: 'B'
+}
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffcf"),
+  Name: 'Charlie',
+  Age: 20,
+  Gender: 'Male',
+  Grade: 'A-'
+}
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffd0"),
+  Name: 'Diana',
+  Age: 23,
+  Gender: 'Female',
+  Grade: 'B+'
+}
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffd1"),
+  Name: 'Ethan',
+  Age: 21,
+  Gender: 'Male',
+  Grade: 'B'
+}
+
+
+
+2.) Find students who are older than 21.
+
+*Query: db.students.find({ Age: { $gt: 21 } })
+*Output:
+
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffcd"),
+  Name: 'Alice',
+  Age: 22,
+  Gender: 'Female',
+  Grade: 'A'
+}
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffce"),
+  Name: 'Bob',
+  Age: 25,
+  Gender: 'Male',
+  Grade: 'B'
+}
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffd0"),
+  Name: 'Diana',
+  Age: 23,
+  Gender: 'Female',
+  Grade: 'B+'
+}
+
+
+3.) Find female students with grade "A" or "A-".
+
+*Query: db.students.find({ Gender: "Female", Grade: { $in: ["A", "A-"] } })
+*Output:
+
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffcd"),
+  Name: 'Alice',
+  Age: 22,
+  Gender: 'Female',
+  Grade: 'A'
+}
+
+4.) Find male students with grade "B" or "B+".
+
+*Query: db.students.find({ Gender: "Male", Grade: { $in: ["B", "B+"] } })
+*Output:
+
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffce"),
+  Name: 'Bob',
+  Age: 25,
+  Gender: 'Male',
+  Grade: 'B'
+}
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffd1"),
+  Name: 'Ethan',
+  Age: 21,
+  Gender: 'Male',
+  Grade: 'B'
+}
+
+5.) Find students named "Alice" or "Charlie".
+
+*Query: db.students.find({ Name: { $in: ["Alice", "Charlie"] } })
+*Output:
+
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffcd"),
+  Name: 'Alice',
+  Age: 22,
+  Gender: 'Female',
+  Grade: 'A'
+}
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffcf"),
+  Name: 'Charlie',
+  Age: 20,
+  Gender: 'Male',
+  Grade: 'A-'
+}
