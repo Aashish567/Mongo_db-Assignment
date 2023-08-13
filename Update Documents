@@ -1,0 +1,57 @@
+Task 3: Update Documents
+Update the following student records in the collection:
+● Update Bob's age to 26.
+● Update Diana's grade to "A".
+● Update Ethan's age to 22 and grade to "A".
+
+Solution:
+
+1.) Update Bob's age to 26.
+
+*Query: db.students.updateOne(
+  { Name: "Bob" },
+  { $set: { Age: 26 } }
+)
+
+*Output:
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffce"),
+  Name: 'Bob',
+  Age: 26,
+  Gender: 'Male',
+  Grade: 'B'
+}
+
+
+2.) Update Diana's grade to "A".
+
+*Query: db.students.updateOne(
+  { Name: "Diana" },
+  { $set: { Grade: "A" } }
+)
+
+*Output:
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffd0"),
+  Name: 'Diana',
+  Age: 23,
+  Gender: 'Female',
+  Grade: 'A'
+}
+
+
+3.) Update Ethan's age to 22 and grade to "A".
+
+*Query: db.students.updateOne(
+  { Name: "Ethan" },
+  { $set: { Age: 22, Grade: "A" } }
+)
+
+*Output:
+{
+  _id: ObjectId("64d8c65afed53c8e15e0ffd1"),
+  Name: 'Ethan',
+  Age: 22,
+  Gender: 'Male',
+  Grade: 'A'
+}
