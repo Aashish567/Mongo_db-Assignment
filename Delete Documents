@@ -1,0 +1,35 @@
+Task 4: Delete Documents
+Write queries to delete the following documents from the collection:
+● Delete the record of Alice.
+● Delete all male students.
+
+Solution:
+
+● Delete the record of Alice.
+
+*Query: db.students.deleteOne({ Name: "Alice" })
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+
+● Delete all male students.
+
+*Query: db.students.deleteMany({ Gender: "Male" })
+{
+  acknowledged: true,
+  deletedCount: 3
+}
+
+*Output: Data shown in the database
+
+{
+  "_id": {
+    "$oid": "64d8c65afed53c8e15e0ffd0"
+  },
+  "Name": "Diana",
+  "Age": 23,
+  "Gender": "Female",
+  "Grade": "A"
+}
+
