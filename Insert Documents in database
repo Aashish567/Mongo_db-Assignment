@@ -15,6 +15,7 @@ use student_records
 switched to db student_records
 db.createCollection("students")
 { ok: 1 }
+
 db.students.insertMany([
   {
     Name: "Alice",
