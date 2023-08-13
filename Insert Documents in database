@@ -1,0 +1,111 @@
+Task 1: Insert Documents
+Insert the following student records into the "students" collection:
+● Name: Alice, Age: 22, Gender: Female, Grade: A
+● Name: Bob, Age: 25, Gender: Male, Grade: B
+● Name: Charlie, Age: 20, Gender: Male, Grade: A-
+● Name: Diana, Age: 23, Gender: Female, Grade: B+
+● Name: Ethan, Age: 21, Gender: Male, Grade: B
+
+
+Solution:
+
+use student_records
+switched to db student_records
+db.createCollection("students")
+{ ok: 1 }
+db.students.insertMany([
+  {
+    Name: "Alice",
+    Age: 22,
+    Gender: "Female",
+    Grade: "A"
+  },
+  {
+    Name: "Bob",
+    Age: 25,
+    Gender: "Male",
+    Grade: "B"
+  },
+  {
+    Name: "Charlie",
+    Age: 20,
+    Gender: "Male",
+    Grade: "A-"
+  },
+  {
+    Name: "Diana",
+    Age: 23,
+    Gender: "Female",
+    Grade: "B+"
+  },
+  {
+    Name: "Ethan",
+    Age: 21,
+    Gender: "Male",
+    Grade: "B"
+  }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64d8c65afed53c8e15e0ffcd"),
+    '1': ObjectId("64d8c65afed53c8e15e0ffce"),
+    '2': ObjectId("64d8c65afed53c8e15e0ffcf"),
+    '3': ObjectId("64d8c65afed53c8e15e0ffd0"),
+    '4': ObjectId("64d8c65afed53c8e15e0ffd1")
+  }
+}
+
+
+
+Output: Following data shown in the mongo db database
+
+1.) {
+  "_id": {
+    "$oid": "64d8c65afed53c8e15e0ffcd"
+  },
+  "Name": "Alice",
+  "Age": 22,
+  "Gender": "Female",
+  "Grade": "A"
+   }
+
+2.)  {
+  "_id": {
+    "$oid": "64d8c65afed53c8e15e0ffce"
+  },
+  "Name": "Bob",
+  "Age": 25,
+  "Gender": "Male",
+  "Grade": "B"
+    }
+
+3.)  {
+  "_id": {
+    "$oid": "64d8c65afed53c8e15e0ffcf"
+  },
+  "Name": "Charlie",
+  "Age": 20,
+  "Gender": "Male",
+  "Grade": "A-"
+    }
+
+4.)  {
+  "_id": {
+    "$oid": "64d8c65afed53c8e15e0ffd0"
+  },
+  "Name": "Diana",
+  "Age": 23,
+  "Gender": "Female",
+  "Grade": "B+"
+   }
+
+5.)  {
+  "_id": {
+    "$oid": "64d8c65afed53c8e15e0ffd1"
+  },
+  "Name": "Ethan",
+  "Age": 21,
+  "Gender": "Male",
+  "Grade": "B"
+    }
