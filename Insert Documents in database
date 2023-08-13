@@ -9,6 +9,8 @@ Insert the following student records into the "students" collection:
 
 Solution:
 
+// MongoDB Query for inserting data into database.
+
 use student_records
 switched to db student_records
 db.createCollection("students")
